@@ -30,10 +30,10 @@ app.use( (err, req, res, next) => {
     res.send({error: err.message});
 })
 
-
+const port = process.env.port || 4000
 //Listen to port
-app.listen(process.env.port || 4000, function(){
-    console.log('Listening on port... ');
+app.listen(port, function(){
+    console.log('Listening on port ' + port);
 });
 
 
