@@ -9,7 +9,10 @@ const app = express();
 
 //Connect to mongodb;
 mongoose.set('useCreateIndex', true);
-mongoose.connect('mongodb://localhost/jobApp', {useNewUrlParser: true});
+// mongoose.connect('mongodb://localhost/jobApp', {useNewUrlParser: true});
+
+//Connect to MongoDB on mLab
+mongoose.connect('mongodb://cw1753:cw1753@ds157654.mlab.com:57654/jobapp', {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
 
 //Set up body parser
