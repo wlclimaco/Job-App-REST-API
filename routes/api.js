@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Job = require('../models/job');
 const Company = require('../models/company');
+const Menu = require('../models/menu');
 
 
 //Get all the companies in the db
@@ -9,6 +10,21 @@ router.get('/company', (req, res, next) => {
     Company.find({}).sort({company: 1}).then( (result) => {
         console.log("GET: /company");
         res.send(result);
+    }).catch(next);
+})
+
+//Get all the companies in the db
+router.get('/menu', (req, res, next) => {
+    Menu.find({}).sort({menu: 1}).then( (result) => {
+        console.log("GET: /menu");
+        res.send(result);
+    }).catch(next);
+})
+
+router.post('/add-menu', (req, res, next) => {
+    Menu.create(req.body).then( (job, err) => {
+        console.log("POST: /add-menu " +job);
+        res.send(job);
     }).catch(next);
 })
 
@@ -27,6 +43,7 @@ router.get('/job/:company', (req, res, next) => {
         res.send(result);
     }).catch(next);
 })
+
 
 //Get Company and link for a specific company
 router.get('/company/:companyName', (req, res, next) => {
