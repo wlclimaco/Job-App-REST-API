@@ -10,7 +10,8 @@ const menuSchema = new Schema({
         icon : String, default: "",
         page : {
             nome: String, default: "",
-            order: String, default: ""
+            order: String, default: "",
+            titulo: String, default: ""
         }
     },
     subMenu: {

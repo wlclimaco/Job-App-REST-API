@@ -28,7 +28,7 @@ router.post('/add-menu', (req, res, next) => {
     }).catch(next);
 })
 
-//Edit the status and/or note of a job
+//Edit the status and/or menu of a job
 router.put('/edit-menu', (req, res, next) => {
     Menu.findOneAndUpdate(
         {"_id": req.body.id},
