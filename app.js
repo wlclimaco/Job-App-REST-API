@@ -12,7 +12,9 @@ mongoose.set('useCreateIndex', true);
 // mongoose.connect('mongodb://localhost/jobApp', {useNewUrlParser: true});
 
 //Connect to MongoDB on mLab
-mongoose.connect('mongodb://cw1753:cw1753@ds157654.mlab.com:57654/jobapp', {useNewUrlParser: true});
+//mongoose.connect('mongodb://cw1753:cw1753@ds157654.mlab.com:57654/jobapp', {useNewUrlParser: true});
+mongoose.connect('mongodb://joaodascoves:N6j7y7a5@ds163254.mlab.com:63254/jobapp', {useNewUrlParser: true});
+//mongodb://wlclimaco:n6j7y7a5@ds035786.mlab.com:35786/wlclimaco
 mongoose.Promise = global.Promise;
 
 //Set up body parser
