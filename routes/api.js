@@ -28,6 +28,23 @@ router.post('/add-menu', (req, res, next) => {
     }).catch(next);
 })
 
+//Edit the status and/or note of a job
+router.put('/edit-menu', (req, res, next) => {
+    Menu.findOneAndUpdate(
+        {"_id": req.body.id},
+        {$set: {
+            "status": req.body.status,
+            "note": req.body.note
+        }}, {
+            new: true,
+            useFindAndModify: false
+        }
+    ).then( (result) => {
+        console.log("PUT: /edit-menu");
+        res.send(result);
+    }).catch(next);
+})
+
 //Get all the jobs in the db
 router.get('/job', (req, res, next) => {
     Job.find({}).sort({company: 1}).then( (result) => {

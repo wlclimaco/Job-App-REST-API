@@ -9,8 +9,8 @@ const menuSchema = new Schema({
         status : Integer, default: 0,
         icon : String, default: "",
         page : {
-            nome: String,
-        default: ""
+            nome: String, default: "",
+            order: String, default: ""
         }
     },
     subMenu: {
